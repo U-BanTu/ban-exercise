@@ -1,43 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <link rel="stylesheet" type="text/css" href="index.css" />
     <title>服装店顾客服务系统官网</title>
 
 </head>
-<body style="background-color:PowderBlue;font-size: 16px;">
+
+<body>
 
 
-<img src="11346.jpg" alt="网页logo" width="100px" height="auto" id="image"/>
+    <!-- <img src="11346.jpg" alt="网页logo" width="100px" height="auto" id="image"/> -->
 
-<div class="page">
-    <form>
-    <h1>服装店VIP会员系统界面</h1>
-    <label>会员ID:</label>
-    <input id="vip-number" type="text" name="vip-name" value="会员号" /><br />
-    <label>ID密码：</label>
-    <input  id="password"type="password" name="id" value="密码" /><br />
+    <div class="page">
+        <form>
+            <h2>服装店VIP会员系统界面</h2>
+            <label>会员卡号</label>
+            <input id="vip-number" type="text" name="vip-name" value="" placeholder="在这里输入用户名" /><br />
+            <label>会员密码</label>
+            <input id="password" type="password" name="id" value="" placeholder="在这里输入密码" /><br /><br />
+            <input id="go-login" type="button" value="登录" onclick="GetValue()" />
+            <input id="to-register" type="button" value="注册" onclick="alert('没有开放注册')" />
+        </form>
+        <script>
+            /**
+             * 验证用户名密码的事件
+             */
+            function GetValue() {
+                var userid = document.getElementById("vip-number"); //获取用户名标签
+                console.log(userid.value);
+                var userpd = document.getElementById("password"); //获取密码标签
+                console.log(userpd.value);
+                if (userid.value == "12345" && userpd.value == "abcd") { //验证
+                    alert("登录成功！");
+                } else {
+                    alert("用户名或密码错误!");
+                }
 
-    <input id="go-login" type="button" value="登录" onclick="GetValue()"/>
-    <input id="to-register" type="button" value="注册"/>
-</form>
-    <script>
-        function GetValue() {
-            var userid=document.getElementById("vip-number");
-            console.log(userid.value);
-            var userpd=document.getElementById("password");
-            console.log(userpd.value);
-            if(userid.value=="12345"&& userpd.value=="abcd"){
-                alert("登录成功！");
             }
-            else{
-                alert("用户名或密码错误!");
-            }
-
-        }
-
-    </script>
-</div>
+        </script>
+    </div>
 </body>
+
 </html>
